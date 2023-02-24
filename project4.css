@@ -77,3 +77,15 @@ table th{
 th,td{
     padding: 5px;
 }
+.time{
+    color: #0000ff;
+    font-size: 30px;
+    margin-left: 50px;
+}
+#clock{
+    color: red;
+    font-size: 20px;
+    margin-left: 80px;
+}
+
+/*https: //www.youtube.com/watch?v=p1QU3kLFPdg
