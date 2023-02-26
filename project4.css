@@ -81,11 +81,32 @@ th,td{
     color: #0000ff;
     font-size: 30px;
     margin-left: 50px;
+    
 }
 #clock{
     color: red;
     font-size: 20px;
     margin-left: 80px;
+    
 }
-
+.hide{
+    display: none;
+}
+#password{
+    width: 300px;
+    margin-left: 300px;
+}
+#correct{
+    margin-left: 300px;
+    margin-top: 5px;
+    width: 600px;
+}
+@media(max-width:1023px){
+    .head{
+        margin: 0;
+    }
+}
 /*https: //www.youtube.com/watch?v=p1QU3kLFPdg
+
+https: //www.youtube.com/watch?v=eFsiOTJrrE8
+*/

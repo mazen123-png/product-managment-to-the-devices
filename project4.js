@@ -8,7 +8,9 @@ let count = document.getElementById('count');
 let category = document.getElementById('category');
 let submit = document.getElementById('submit');
 let mood = 'create';
-let tmp;//get total
+let tmp;
+let table = document.getElementById('table')
+//get total
 function getTotal()
 {
     if(price.value != ''){
@@ -200,3 +202,52 @@ function searchData(value) {
     }
     document.getElementById('tbody').innerHTML = table;
 }
+title.classList.add('hide')
+price.classList.add('hide');
+taxes.classList.add('hide');
+discount.classList.add('hide');
+ads.classList.add('hide');
+total.classList.add('hide');
+count.classList.add('hide');
+category.classList.add('hide');
+submit.classList.add('hide');
+search.classList.add('hide');
+table.classList.add('hide')
+document.getElementById('head').classList.add('hide')
+document.getElementById('searchTitle').classList.add('hide')
+document.getElementById('searchCategory').classList.add('hide')
+document.getElementById('clock').classList.add('hide')
+document.getElementById('time').classList.add('hide')
+
+let correct = document.getElementById('correct')
+let password = document.getElementById('password')
+correct.onclick = function () {
+    if (password.value == 'mazen') {
+    title.classList.remove('hide')
+    price.classList.remove('hide');
+    taxes.classList.remove('hide');
+    discount.classList.remove('hide');
+    ads.classList.remove('hide');
+    total.classList.remove('hide');
+    count.classList.remove('hide');
+    category.classList.remove('hide');
+    submit.classList.remove('hide');
+    search.classList.remove('hide');
+    table.classList.remove('hide')
+    document.getElementById('head').classList.remove('hide')
+    document.getElementById('searchTitle').classList.remove('hide')
+    document.getElementById('searchCategory').classList.remove('hide')
+    document.getElementById('clock').classList.remove('hide')
+    document.getElementById('time').classList.remove('hide')
+    correct.classList.add('hide')
+    password.classList.add('hide')
+    } else {
+        correct.classList.add('hide')
+        password.classList.add('hide')
+        document.write('<h1>you are enabled</h1>')
+    }
+}
+
+
+
+
