@@ -10,6 +10,23 @@ let submit = document.getElementById('submit');
 let mood = 'create';
 let tmp;
 let table = document.getElementById('table')
+let light = document.getElementById('light')
+let dark = document.getElementById('dark')
+let body = document.getElementById('body')
+let openButton = document.getElementById('open')
+let closeButton = document.getElementById('close')
+let nav = document.getElementById('nav')
+//open and close navbar
+openButton.onclick = function(){
+    openButton.style.display = 'none'
+    closeButton.style.display = 'inline'
+    nav.style.display = 'block'
+}
+closeButton.onclick = function(){
+    openButton.style.display = 'inline'
+    closeButton.style.display = 'none'
+    nav.style.display = 'none'
+}
 //get total
 function getTotal()
 {
@@ -30,6 +47,7 @@ if (localStorage.product != null) {
 } else {
     dataPro = []; 
 }
+
 submit.onclick = function () {
     let newPro = {
         title: title.value.toLowerCase(),
@@ -94,7 +112,7 @@ function showData()
     }
     document.getElementById('tbody').innerHTML = table;
     let btnDelete = document.getElementById('deleteAll')
-    if (dataPro.length > 0) {
+    if (dataPro.length > 0 ) {
         btnDelete.innerHTML = `
         <button onclick="deleteAll()">delete All (${dataPro.length})</button>
         `
@@ -203,7 +221,7 @@ function searchData(value) {
     document.getElementById('tbody').innerHTML = table;
 }
 title.classList.add('hide')
-price.classList.add('hide');
+price.classList.add('hide'); 
 taxes.classList.add('hide');
 discount.classList.add('hide');
 ads.classList.add('hide');
@@ -213,41 +231,81 @@ category.classList.add('hide');
 submit.classList.add('hide');
 search.classList.add('hide');
 table.classList.add('hide')
+dark.classList.add('hide')
+light.classList.add('hide')
 document.getElementById('head').classList.add('hide')
 document.getElementById('searchTitle').classList.add('hide')
 document.getElementById('searchCategory').classList.add('hide')
-document.getElementById('clock').classList.add('hide')
 document.getElementById('time').classList.add('hide')
+document.getElementById('clock').classList.add('hide')
+document.getElementById('deleteAll').classList.add('hide')
+document.getElementById('button').classList.add('hide')
+nav.classList.add('hide')
+openButton.classList.add('hide')
+closeButton.classList.add('hide')
 
 let correct = document.getElementById('correct')
 let password = document.getElementById('password')
-correct.onclick = function () {
-    if (password.value == 'mazen') {
-    title.classList.remove('hide')
-    price.classList.remove('hide');
-    taxes.classList.remove('hide');
-    discount.classList.remove('hide');
-    ads.classList.remove('hide');
-    total.classList.remove('hide');
-    count.classList.remove('hide');
-    category.classList.remove('hide');
-    submit.classList.remove('hide');
-    search.classList.remove('hide');
-    table.classList.remove('hide')
-    document.getElementById('head').classList.remove('hide')
-    document.getElementById('searchTitle').classList.remove('hide')
-    document.getElementById('searchCategory').classList.remove('hide')
-    document.getElementById('clock').classList.remove('hide')
-    document.getElementById('time').classList.remove('hide')
-    correct.classList.add('hide')
-    password.classList.add('hide')
+    
+    correct.onclick = function () {
+        if (password.value == 'programming') {
+            title.classList.remove('hide')
+            price.classList.remove('hide');
+            taxes.classList.remove('hide');
+            discount.classList.remove('hide');
+            ads.classList.remove('hide');
+            total.classList.remove('hide');
+            count.classList.remove('hide');
+            category.classList.remove('hide');
+            submit.classList.remove('hide');
+            search.classList.remove('hide');
+            table.classList.remove('hide')
+            document.getElementById('head').classList.remove('hide')
+            document.getElementById('searchTitle').classList.remove('hide')
+            document.getElementById('searchCategory').classList.remove('hide')
+            document.getElementById('clock').classList.remove('hide')
+            document.getElementById('time').classList.remove('hide')
+            document.getElementById('deleteAll').classList.remove('hide')
+            correct.classList.add('hide')
+            password.classList.add('hide')
+            dark.classList.remove('hide')
+            light.classList.remove('hide')
+            document.getElementById('button').classList.remove('hide')
+            nav.classList.remove('hide')
+            openButton.classList.remove('hide')
+            closeButton.classList.remove('hide')
+        } else {
+            correct.classList.add('hide')
+            password.classList.add('hide')
+            enabled = document.write('<h1>you are enabled</h1>')
+        }
+    }
+
+light.onclick = function () {
+    if (body.style.background != '#fff') {
+        body.style.background = '#fff'
+        body.style.color = '#000'
     } else {
-        correct.classList.add('hide')
-        password.classList.add('hide')
-        document.write('<h1>you are enabled</h1>')
+        body.style.background = '#fff'
+        body.style.color = '#000'
+    }
+}
+dark.onclick = function () {
+    if (body.style.background != '#222') {
+        body.style.background = '#222'
+        body.style.color = '#fff'
+    } else {
+        body.style.background = '#222'
+        body.style.color = '#fff'
     }
 }
 
 
-
-
+//new
+let button = document.getElementById('button')
+button.onclick = function(){
+    scroll({
+        top: 0,
+        behavior: 'smooth',
+    })
+}

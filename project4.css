@@ -7,9 +7,49 @@ body{
     color:#fff;
     font-family: system-ui;
 }
+.close{
+    position: absolute;
+    left: 23%;
+    top: 8px;
+    background-color: #dd1e10;
+    padding: 5px;
+    border-radius: 20%;
+    cursor: pointer;
+    display: none;
+}
+.open{
+    position: absolute;
+    left: 2px;
+    top: 0;
+    background-color: #dd1e10;
+    padding: 5px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+.open:hover,
+.close:hover{
+    background-color: #0000ff;
+}
+nav{
+    background-color: #333;
+    width: 20%;
+    position: absolute;
+    height: 50%;
+    margin-left: 20px;
+    display: none;
+}
+nav button{
+    display: inline-block;
+}
+nav p{
+    margin-top: 20px;
+}
 .crud{
-    width: 80%;
+    width: 60%;
     margin: auto;
+    margin-left: 30%;
+    position: relative;
+    left: -100px;
 }
 .head{
     text-align: center;
@@ -42,7 +82,7 @@ input:focus{
 #total::before{
     content:"Total: ";
 }
-button{
+.inputs button,.searchBlock button,#correct{
     width: 100%;
     height: 30px;
     border: none;
@@ -52,7 +92,17 @@ button{
     border-radius: 20px;
     transition: 0.5s;
 }
-button:hover{
+
+
+#correct:hover{
+    background-color: #51025f;
+    letter-spacing: 1px;
+}
+.inputs button:hover{
+    background-color: #51025f;
+    letter-spacing: 1px;
+}
+.searchBlock button:hover{
     background-color: #51025f;
     letter-spacing: 1px;
 }
@@ -80,7 +130,7 @@ th,td{
 .time{
     color: #0000ff;
     font-size: 30px;
-    margin-left: 50px;
+    margin-left: 30px;
     
 }
 #clock{
@@ -101,12 +151,40 @@ th,td{
     margin-top: 5px;
     width: 600px;
 }
-@media(max-width:1023px){
-    .head{
-        margin: 0;
-    }
+.dark,.light{
+    position: relative;
+    left: 5%;
+    bottom: 0;
+    color: #fff;
+    background-color: #444;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 20px;
+    padding-right: 50%;
+    border: none;
+    outline: none;
 }
-/*https: //www.youtube.com/watch?v=p1QU3kLFPdg
 
-https: //www.youtube.com/watch?v=eFsiOTJrrE8
-*/
+.dark{
+    margin-right: 5px;
+    margin-bottom: 20px;
+}
+.dark:hover{
+    background-color: #21099c;
+    outline: 2px solid green;
+}
+.light:hover {
+    background-color: #21099c;
+    outline: 2px solid green;
+}
+#button {
+    position: fixed;
+    right: 5px;
+    bottom: 0;
+    background-color: blue;
+    color: red;
+    border: none;
+    outline: 2px solid red;
+    border-radius: 4px;
+}
+
